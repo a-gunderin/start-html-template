@@ -1,2 +1,6 @@
-# start-html-template
-Start html template (gulp, pug=>html, sass=>css)
+# Start html template
+This is simple start html template
+Used technologies:
+- GULP
+- PUG => HTML
+- SASS => CSS
