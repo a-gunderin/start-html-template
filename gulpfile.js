@@ -1,17 +1,14 @@
-var 	gulp				=	require('gulp'),
+var	gulp				=	require('gulp'),
 		browserSync		=	require('browser-sync'),
-		gulpif			=	require('gulp-if'),
 		pug				=	require('gulp-pug'),
 		notify			=	require("gulp-notify"),
 		sass				=	require('gulp-sass'),
-		bourbon			=	require('node-bourbon'),
 		rename			=	require('gulp-rename'),
 		autoprefixer	=	require('gulp-autoprefixer'),
 		cleanCSS			=	require('gulp-clean-css'),
 		concat			=	require('gulp-concat'),
 		uglify			=	require('gulp-uglify'),
-		spritesmith		=	require('gulp.spritesmith'),
-		emitty			=	require('emitty').setup('src/pug', 'pug');
+		spritesmith		=	require('gulp.spritesmith');
 
 
 // Setup localhost + automatic browser update
@@ -26,7 +23,6 @@ gulp.task('browser-sync', function() {
 // Compiling pug in html
 gulp.task('pug', function() {
 	return gulp.src(['src/pug/**/*.pug', '!src/pug/**/_*.pug'])
-		.pipe(gulpif(global.watch, emitty.stream()))
 		.pipe(pug({pretty: '\t'}))
 		.on("error", notify.onError())
 		.pipe(gulp.dest('app'));
@@ -36,8 +32,7 @@ gulp.task('pug', function() {
 // Compiling sass in css with adding vendor prefixes and compressing css
 gulp.task('sass', function() {
 	return gulp.src('src/sass/**/*.sass')
-		.pipe(sass({includePaths: bourbon.includePaths})
-		.on("error", notify.onError()))
+		.pipe(sass().on("error", notify.onError()))
 		.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer(['last 15 versions']))
 		.pipe(cleanCSS())
@@ -78,7 +73,7 @@ gulp.task('sprite', function() {
 	.pipe(spritesmith({
 		imgName: 'sprite.png',
 		cssName: '_sprite.sass',
-		imgPath: '../img/sprite.png',
+		imgPath: '/img/sprite.png',
 		cssFormat: 'sass',
 		padding: 4
 	}));
