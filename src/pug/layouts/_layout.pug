@@ -1,22 +1,23 @@
 include ../mixins/_mixins
 doctype html
-head
-	meta(charset="UTF-8")
-	block head-meta
-	meta(http-equiv="X-UA-Compatible" content="IE=edge")
-	meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
-	include ../includes/_favicons
-	meta(name="theme-color" content="#ccc")
-	meta(name="msapplication-navbutton-color" content="#ccc")
-	meta(name="apple-mobile-web-app-status-bar-style" content="#ccc")
-	block noindex
-	style.
-		body{opacity: 0;overflow-x: hidden;-webkit-transition: opacity 0.7s ease;-moz-transition: opacity 0.7s ease;-o-transition: opacity 0.7s ease;transition: opacity 0.7s ease;}
-body
-	block header
-		header.main-head
-			h1 Start html template
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsum, earum facilis dignissimos numquam reiciendis omnis sit voluptas, sint, quod voluptates et. Harum laudantium eaque maiores, sint doloribus, velit labore itaque, minus saepe quod aspernatur. Consequatur sit velit maxime quasi, accusamus quis, beatae tempora. Necessitatibus eos recusandae, excepturi temporibus voluptatibus.
+html
+	head
+		meta(charset="UTF-8")
+		block head-meta
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		include ../includes/_favicons
+		meta(name="theme-color" content="#ccc")
+		meta(name="msapplication-navbutton-color" content="#ccc")
+		meta(name="apple-mobile-web-app-status-bar-style" content="#ccc")
+		block noindex
+		style.
+			body{opacity: 0;overflow-x: hidden;-webkit-transition: opacity 0.7s ease;-moz-transition: opacity 0.7s ease;-o-transition: opacity 0.7s ease;transition: opacity 0.7s ease;}
+	body
+		block header
+			header.main-head
+				h1 Start html template
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsum, earum facilis dignissimos numquam reiciendis omnis sit voluptas, sint, quod voluptates et. Harum laudantium eaque maiores, sint doloribus, velit labore itaque, minus saepe quod aspernatur. Consequatur sit velit maxime quasi, accusamus quis, beatae tempora. Necessitatibus eos recusandae, excepturi temporibus voluptatibus.
 
 
-	link(rel="stylesheet" href="css/main.min.css")
+		link(rel="stylesheet" href="css/main.min.css")
